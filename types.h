@@ -9,7 +9,7 @@
 	#include <stdio.h>
 
 	#define MAX_DESCRIPTION 100
-    #define MAX_CANT_ARG 3
+
 
     #define MSG_PRODUCTS_VIEW "Los productos leidos son:"
 	#define MSG_ERROR_FILE_NOT_AVAILABLE "Los archivos no estan disponibles."
