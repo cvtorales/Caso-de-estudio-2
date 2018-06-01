@@ -11,23 +11,31 @@
 	 	Esta funcion se utiliza para leer un archivo binario y mostrar su contenido en pantalla,
 	 	para esto, el archivo debe estar cerrado, ya que esta funcion se encarga de abrirlo en modo
 	 	lectura y luego cerrarlo.
+		-----------------------------------------
+		Se realizaron las siguientes modificaciones:
+		Saqué la apertura y cierre del archivo de lectura.
+		Cambié el nombre de la función
+		
+		
+		
 	*/
 
-	status_t products_record_view(char * file_name)
+	status_t products_record_view(FILE * archivo)
 	{
 		product_t record;
-		FILE * archivo;
-
+		/*
 		if((archivo = fopen(file_name,"rb")) == NULL)
 		{
 			fprintf(stderr,"%s\n", MSG_ERROR_NO_OPEN_FILE);
 			return ERROR_NO_OPEN_FILE;
 		}
+		*/
 
 		while(fread(&record, sizeof(record), 1, archivo))
 			printf("%s\n%lu\n%lu\n%s\n%lu\n", MSG_PRODUCTS_VIEW,record.id, record.cod_barras, record.description, record.precio);
-		
+		/*
 		fclose(archivo);
+		*/
 
 		return OK;
 
